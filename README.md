@@ -1,2 +1,2 @@
-# micro-transactions-read-api
-Micro-Transactions Read API for Micro-Transactions Distributed System
+# mts-transactions-api
+Transactions API for Micro-Transactions Distributed System
