@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>PetProjects.MicroTransactionsApi.Application.CommandServices</AssemblyName>
+    <RootNamespace>PetProjects.MicroTransactionsApi.Application.CommandServices</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PetProjects.Framework.Cqrs" Version="0.9.17336.1-beta" />
+  </ItemGroup>
+
+</Project>

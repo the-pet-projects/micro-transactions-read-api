@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>PetProjects.MicroTransactionsApi.Application.QueryServices</AssemblyName>
+    <RootNamespace>PetProjects.MicroTransactionsApi.Application.QueryServices</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PetProjects.Framework.Cqrs" Version="0.9.17336.1-beta" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Dto\Application.Dto.csproj" />
+    <ProjectReference Include="..\Domain.Queries\Domain.Queries.csproj" />
+  </ItemGroup>
+
+</Project>
