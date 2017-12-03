@@ -1,4 +1,4 @@
-﻿namespace Presentation.Api
+﻿namespace PetProjects.MicroTransactionsApi.Presentation.Api
 {
     using Microsoft.AspNetCore;
     using Microsoft.AspNetCore.Hosting;

@@ -1,16 +1,15 @@
 ﻿namespace PetProjects.MicroTransactionsApi.Application.Queries.Transactions
 {
-    using System;
     using PetProjects.Framework.Cqrs.Queries;
     using PetProjects.MicroTransactionsApi.Application.Dto.Transactions;
 
-    public class GetTransactionByIdQuery : IQuery<TransactionByIdDto>
+    public class GetTransactionsQuery : IQuery<TransactionsPageDto>
     {
-        public GetTransactionByIdQuery(Guid id)
+        public GetTransactionsQuery(string pageToken)
         {
-            this.Id = id;
+            this.PageToken = pageToken;
         }
 
-        public Guid Id { get; }
+        public string PageToken { get; }
     }
 }

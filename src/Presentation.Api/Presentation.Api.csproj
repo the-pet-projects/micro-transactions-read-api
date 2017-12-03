@@ -2,6 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>PetProjects.MicroTransactionsApi.Presentation.Api</AssemblyName>
+    <RootNamespace>PetProjects.MicroTransactionsApi.Presentation.Api</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>bin\Debug\netcoreapp2.0\PetProjects.MicroTransactionsApi.Presentation.Api.xml</DocumentationFile>
+    <NoWarn>1701;1702;1705;1591</NoWarn>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DocumentationFile>bin\Release\netcoreapp2.0\PetProjects.MicroTransactionsApi.Presentation.Api.xml</DocumentationFile>
+    <NoWarn>1701;1702;1705;1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
@@ -9,8 +21,14 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
-    <PackageReference Include="PetProjects.Framework.Cqrs.Extensions.AspNetCore" Version="0.9.17336.1-beta" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Hosting" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Formatters.Json" Version="2.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.1" />
+    <PackageReference Include="Microsoft.Extensions.PlatformAbstractions" Version="1.1.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="1.1.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -21,6 +39,7 @@
     <ProjectReference Include="..\Application.Commands\Application.Commands.csproj" />
     <ProjectReference Include="..\Application.Dto\Application.Dto.csproj" />
     <ProjectReference Include="..\Application.Queries\Application.Queries.csproj" />
+    <ProjectReference Include="..\Infrastructure.Configuration\Infrastructure.Configuration.csproj" />
   </ItemGroup>
 
 </Project>
