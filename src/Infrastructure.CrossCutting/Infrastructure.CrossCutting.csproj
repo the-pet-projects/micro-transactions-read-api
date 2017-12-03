@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>PetProjects.MicroTransactionsApi.Infrastructure.CrossCutting</AssemblyName>
+    <RootNamespace>PetProjects.MicroTransactionsApi.Infrastructure.CrossCutting</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="Bus\" />
+  </ItemGroup>
+
+</Project>

@@ -1,7 +1,7 @@
-﻿namespace PetProjects.MicroTransactionsApi.Application.QueryServices.Mappings
+﻿namespace PetProjects.MicroTransactionsApi.Application.QueryHandlers.Transactions
 {
     using PetProjects.MicroTransactionsApi.Application.Dto;
-    using PetProjects.MicroTransactionsApi.Domain.Queries.ReadModels;
+    using PetProjects.MicroTransactionsApi.Domain.ReadModel.Transactions;
 
     internal static class TransactionMappings
     {

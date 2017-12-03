@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>PetProjects.MicroTransactionsApi.Domain.Queries</AssemblyName>
-    <RootNamespace>PetProjects.MicroTransactionsApi.Domain.Queries</RootNamespace>
+    <RootNamespace>PetProjects.MicroTransactionsApi.Application.Commands</RootNamespace>
+    <AssemblyName>PetProjects.MicroTransactionsApi.Application.Commands</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>

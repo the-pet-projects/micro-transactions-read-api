@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>PetProjects.MicroTransactionsApi.Application.QueryServices</AssemblyName>
-    <RootNamespace>PetProjects.MicroTransactionsApi.Application.QueryServices</RootNamespace>
+    <AssemblyName>PetProjects.MicroTransactionsApi.Application.Queries</AssemblyName>
+    <RootNamespace>PetProjects.MicroTransactionsApi.Application.Queries</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -12,7 +12,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Application.Dto\Application.Dto.csproj" />
-    <ProjectReference Include="..\Domain.Queries\Domain.Queries.csproj" />
   </ItemGroup>
 
 </Project>

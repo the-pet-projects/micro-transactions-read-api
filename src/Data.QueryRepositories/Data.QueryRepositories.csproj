@@ -1,9 +1,0 @@
-<Project Sdk="Microsoft.NET.Sdk">
-
-  <PropertyGroup>
-    <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>PetProjects.MicroTransactionsApi.Data.QueryRepositories</AssemblyName>
-    <RootNamespace>PetProjects.MicroTransactionsApi.Data.QueryRepositories</RootNamespace>
-  </PropertyGroup>
-
-</Project>

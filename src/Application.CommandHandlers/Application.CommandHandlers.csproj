@@ -2,8 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.0</TargetFramework>
-    <AssemblyName>PetProjects.MicroTransactionsApi.Application.CommandServices</AssemblyName>
-    <RootNamespace>PetProjects.MicroTransactionsApi.Application.CommandServices</RootNamespace>
+    <AssemblyName>PetProjects.MicroTransactionsApi.Application.CommandHandlers</AssemblyName>
+    <RootNamespace>PetProjects.MicroTransactionsApi.Application.CommandHandlers</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

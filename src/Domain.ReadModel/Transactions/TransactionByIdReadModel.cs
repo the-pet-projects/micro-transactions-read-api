@@ -1,4 +1,4 @@
-﻿namespace PetProjects.MicroTransactionsApi.Domain.Queries.ReadModels
+﻿namespace PetProjects.MicroTransactionsApi.Domain.ReadModel.Transactions
 {
     using System;
 

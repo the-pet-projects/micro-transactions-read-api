@@ -1,4 +1,4 @@
-namespace PetProjects.MicroTransactionsApi.Application.CommandServices.Tests
+namespace PetProjects.MicroTransactionsApi.Application.CommandHandlers.Tests
 {
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
