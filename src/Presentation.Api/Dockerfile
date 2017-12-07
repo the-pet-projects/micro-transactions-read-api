@@ -7,4 +7,4 @@ WORKDIR /app
 COPY ${source:-/build} .
 EXPOSE 80
 
-ENTRYPOINT ["dotnet", "PetProjects.MtsManagementApi.API.dll"]
+ENTRYPOINT ["dotnet", "Presentation.Api.dll"]
