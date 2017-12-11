@@ -4,12 +4,22 @@
     using PetProjects.Framework.Cqrs.Queries;
     using PetProjects.MicroTransactionsApi.Application.Dto.Transactions;
     using PetProjects.MicroTransactionsApi.Application.Queries.Transactions;
+    using PetProjects.MicroTransactionsApi.Data.ReadModelRepositories.Transactions;
 
     public class GetTransactionByIdQueryHandler : IQueryHandlerAsync<GetTransactionByIdQuery, TransactionByIdDto>
     {
-        public Task<TransactionByIdDto> HandleAsync(GetTransactionByIdQuery query)
+        private readonly ITransactionsRepository repo;
+
+        public GetTransactionByIdQueryHandler(ITransactionsRepository repo)
         {
-            throw new System.NotImplementedException();
+            this.repo = repo;
+        }
+
+        public async Task<TransactionByIdDto> HandleAsync(GetTransactionByIdQuery query)
+        {
+            var transaction = await this.repo.GetAsync(query.Id).ConfigureAwait(false);
+
+            return transaction.ToDto();
         }
     }
 }

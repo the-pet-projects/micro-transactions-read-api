@@ -1,10 +1,13 @@
 ﻿namespace PetProjects.MicroTransactionsApi.Presentation.Api.V1.Controllers
 {
     using System;
+    using System.Net;
     using System.Threading.Tasks;
     using Microsoft.AspNetCore.Mvc;
+    using Microsoft.AspNetCore.Routing;
     using PetProjects.Framework.Cqrs.Mediator;
     using PetProjects.MicroTransactionsApi.Application.Commands.Transactions;
+    using PetProjects.MicroTransactionsApi.Application.Dto;
     using PetProjects.MicroTransactionsApi.Application.Dto.Transactions;
     using PetProjects.MicroTransactionsApi.Application.Queries.Transactions;
 
@@ -20,21 +23,26 @@
         }
 
         // GET v1/Transactions/5
-        [HttpGet("{id:guid}")]
-        public async Task<TransactionByIdDto> GetAsync(Guid id)
+        [HttpGet("{id:guid}", Name = "TransactionsGetById")]
+        [ProducesResponseType(typeof(TransactionByIdDto), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> GetAsync([FromRoute] Guid id)
         {
             var query = new GetTransactionByIdQuery(id);
-
-            return await this.mediator.QueryAsync<GetTransactionByIdQuery, TransactionByIdDto>(query).ConfigureAwait(false);
+            var result = await this.mediator.QueryAsync<GetTransactionByIdQuery, TransactionByIdDto>(query).ConfigureAwait(false);
+            return result == null ? this.NotFound() : (IActionResult)this.Ok(result);
         }
 
         // POST v1/Transactions
-        [HttpPost] 
-        public async Task<Guid> PostAsync(TransactionCreationDto dto)
+        [HttpPost]
+        [ProducesResponseType((int)HttpStatusCode.Accepted)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
+        public async Task<IActionResult> PostAsync([FromBody] TransactionCreationDto dto)
         {
             var query = new CreateTransactionCommand(dto);
-
-            return await this.mediator.RunCommandAsync<CreateTransactionCommand, Guid>(query).ConfigureAwait(false);
+            var result = await this.mediator.RunCommandAsync<CreateTransactionCommand, Guid>(query).ConfigureAwait(false);
+            return this.AcceptedAtRoute("TransactionsGetById", new RouteValueDictionary { { "id", result }, { "api-version", this.RouteData.Values["api-version"] } });
         }
 
         /// GET v1/Transactions?pageToken=asd1241f
@@ -45,12 +53,15 @@
         /// <returns>A paged result of transactions.</returns>
         /// <response code="200">The successfully retrieved transactions.</response>
         [HttpGet]
-        [ProducesResponseType(typeof(TransactionsPageDto), 200)]
+        [ProducesResponseType(typeof(PagedResultDto<TransactionByIdDto>), (int)HttpStatusCode.OK)]
+        [ProducesResponseType((int)HttpStatusCode.NotFound)]
+        [ProducesResponseType((int)HttpStatusCode.InternalServerError)]
         public async Task<IActionResult> GetAsync([FromQuery] string pageToken = null)
         {
             var query = new GetTransactionsQuery(pageToken);
+            var result = await this.mediator.QueryAsync<GetTransactionsQuery, PagedResultDto<TransactionByIdDto>>(query).ConfigureAwait(false);
 
-            return this.Ok(await this.mediator.QueryAsync<GetTransactionsQuery, TransactionsPageDto>(query).ConfigureAwait(false));
+            return result == null ? this.NotFound() : (IActionResult)this.Ok(result);
         }
     }
 }

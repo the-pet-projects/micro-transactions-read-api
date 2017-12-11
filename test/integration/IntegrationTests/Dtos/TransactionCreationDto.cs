@@ -1,9 +1,11 @@
-﻿namespace PetProjects.MicroTransactionsApi.Application.Dto.Transactions
+﻿namespace IntegrationTests.Dtos
 {
     using System;
 
-    public class TransactionCreationDto
+    public class TransactionByIdDto
     {
+        public Guid Id { get; set; }
+
         public Guid UserId { get; set; }
 
         public Guid ItemId { get; set; }

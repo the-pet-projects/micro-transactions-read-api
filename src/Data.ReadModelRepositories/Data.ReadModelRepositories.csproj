@@ -6,4 +6,13 @@
     <RootNamespace>PetProjects.MicroTransactionsApi.Data.ReadModelRepositories</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="CassandraCSharpDriver" Version="3.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Domain.ReadModel\Domain.ReadModel.csproj" />
+    <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj" />
+  </ItemGroup>
+
 </Project>

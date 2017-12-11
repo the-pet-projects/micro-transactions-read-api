@@ -7,9 +7,17 @@
     {
         public static TransactionByIdDto ToDto(this TransactionByIdReadModel model)
         {
+            if (model == null)
+            {
+                return null;
+            }
+
             return new TransactionByIdDto
             {
-                Id = model.Id
+                Id = model.Id,
+                UserId = model.UserId,
+                Quantity = model.Quantity,
+                ItemId = model.ItemId
             };
         }
     }

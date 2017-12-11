@@ -13,6 +13,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Application.Dto\Application.Dto.csproj" />
     <ProjectReference Include="..\Application.Queries\Application.Queries.csproj" />
+    <ProjectReference Include="..\Data.ReadModelRepositories\Data.ReadModelRepositories.csproj" />
     <ProjectReference Include="..\Domain.ReadModel\Domain.ReadModel.csproj" />
   </ItemGroup>
 

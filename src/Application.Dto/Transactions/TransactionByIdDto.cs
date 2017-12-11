@@ -1,7 +1,6 @@
 ﻿namespace PetProjects.MicroTransactionsApi.Application.Dto.Transactions
 {
     using System;
-    using System.Collections.Generic;
 
     public class TransactionByIdDto
     {
@@ -9,6 +8,8 @@
 
         public Guid UserId { get; set; }
 
-        public ICollection<ItemQuantity> Items { get; set; }
+        public Guid ItemId { get; set; }
+
+        public int Quantity { get; set; }
     }
 }

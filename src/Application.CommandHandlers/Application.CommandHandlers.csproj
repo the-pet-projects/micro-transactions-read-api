@@ -8,11 +8,14 @@
 
   <ItemGroup>
     <PackageReference Include="PetProjects.Framework.Cqrs" Version="1.0.17337.3" />
+    <PackageReference Include="PetProjects.Framework.Kafka" Version="0.1.17345.1" />
+    <PackageReference Include="PetProjects.MicroTransactions.Commands" Version="0.1.17344.2" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Application.Commands\Application.Commands.csproj" />
     <ProjectReference Include="..\Application.Dto\Application.Dto.csproj" />
+    <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj" />
   </ItemGroup>
 
 </Project>

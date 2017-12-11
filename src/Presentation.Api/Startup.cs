@@ -47,28 +47,31 @@
             {
                 using (var provider = services.BuildServiceProvider())
                 {
-                    var versionDescriptionProvider = provider.GetRequiredService<IApiVersionDescriptionProvider>();
-
-                    foreach (var description in versionDescriptionProvider.ApiVersionDescriptions)
+                    using (var scope = provider.CreateScope())
                     {
-                        options.SwaggerDoc(description.GroupName, Startup.CreateInfoForApiVersion(description));
+                        var versionDescriptionProvider = scope.ServiceProvider.GetRequiredService<IApiVersionDescriptionProvider>();
+
+                        foreach (var description in versionDescriptionProvider.ApiVersionDescriptions)
+                        {
+                            options.SwaggerDoc(description.GroupName, Startup.CreateInfoForApiVersion(description));
+                        }
+
+                        // add a custom operation filter which sets default values
+                        options.OperationFilter<SwaggerDefaultValues>();
+
+                        // integrate xml comments
+                        options.IncludeXmlComments(Startup.XmlCommentsFilePath);
                     }
-
-                    // add a custom operation filter which sets default values
-                    options.OperationFilter<SwaggerDefaultValues>();
-
-                    // integrate xml comments
-                    options.IncludeXmlComments(Startup.XmlCommentsFilePath);
                 }
             });
 
-            services.AddMediator();
+            services.ConfigureDependencies(this.Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, IApiVersionDescriptionProvider provider)
         {
-            //// TODO 
+            //// TODO
             //// app.UseMiddleware(typeof(ErrorHandlingMiddleware));
 
             app.UseMvc();

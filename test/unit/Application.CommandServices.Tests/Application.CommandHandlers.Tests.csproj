@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Application.CommandHandlers\Application.CommandHandlers.csproj" />
+    <ProjectReference Include="..\..\..\src\Application.CommandHandlers\Application.CommandHandlers.csproj" />
   </ItemGroup>
 
 </Project>
