@@ -29,7 +29,7 @@
         {
             var page = await this.connection.Mapper.FetchPageAsync<TransactionByIdReadModel>(
                 pageSize, 
-                pageToken == null ? null : Encoding.UTF8.GetBytes(pageToken), 
+                pageToken?.StringToByteArray(), 
                 string.Empty, 
                 new object[0]).ConfigureAwait(false);
 

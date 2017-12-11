@@ -7,7 +7,7 @@
     {
         public PagedResult(byte[] pagingState, IEnumerable<T> result)
         {
-            this.NextPageToken = pagingState == null ? string.Empty : Encoding.UTF8.GetString(pagingState);
+            this.NextPageToken = pagingState == null ? string.Empty : pagingState.ByteArrayToString();
             this.Result = result;
             this.LastPage = pagingState == null;
         }
