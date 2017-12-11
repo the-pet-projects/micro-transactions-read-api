@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>PetProjects.MicroTransactionsApi.Application.QueryHandlers</AssemblyName>
+    <RootNamespace>PetProjects.MicroTransactionsApi.Application.QueryHandlers</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="PetProjects.Framework.Cqrs" Version="1.0.17337.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application.Dto\Application.Dto.csproj" />
+    <ProjectReference Include="..\Application.Queries\Application.Queries.csproj" />
+    <ProjectReference Include="..\Data.ReadModelRepositories\Data.ReadModelRepositories.csproj" />
+    <ProjectReference Include="..\Domain.ReadModel\Domain.ReadModel.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>PetProjects.MicroTransactionsApi.Infrastructure.Configuration</AssemblyName>
+    <RootNamespace>PetProjects.MicroTransactionsApi.Infrastructure.Configuration</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Console" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="2.0.0" />
+    <PackageReference Include="PetProjects.Framework.Consul" Version="0.9.17330.3" />
+    <PackageReference Include="PetProjects.Framework.Cqrs.Extensions.AspNetCore" Version="1.0.17337.3" />
+    <PackageReference Include="PetProjects.Framework.Kafka" Version="0.1.17345.1" />
+    <PackageReference Include="PetProjects.Framework.Logging.Producer" Version="0.9.17344.4" />
+    <PackageReference Include="PetProjects.MicroTransactions.Commands" Version="0.1.17344.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Application.CommandHandlers\Application.CommandHandlers.csproj" />
+    <ProjectReference Include="..\Application.Commands\Application.Commands.csproj" />
+    <ProjectReference Include="..\Application.Dto\Application.Dto.csproj" />
+    <ProjectReference Include="..\Application.Queries\Application.Queries.csproj" />
+    <ProjectReference Include="..\Application.QueryHandlers\Application.QueryHandlers.csproj" />
+    <ProjectReference Include="..\Data.ReadModelRepositories\Data.ReadModelRepositories.csproj" />
+    <ProjectReference Include="..\Domain.ReadModel\Domain.ReadModel.csproj" />
+    <ProjectReference Include="..\Infrastructure.CrossCutting\Infrastructure.CrossCutting.csproj" />
+  </ItemGroup>
+
+</Project>
